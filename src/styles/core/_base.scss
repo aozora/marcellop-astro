@@ -19,22 +19,24 @@ html {
 
 html,
 body {
-  min-height: 100%;
+  //min-height: 100%;
   margin: 0;
   padding: 0;
 }
 
-html, body, main, #root {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-}
+//html, body, main, #root {
+//  width: 100%;
+//  min-height: 100%;
+//  margin: 0;
+//  padding: 0;
+//}
 
 html {
   height: 100%;
   font-size: 112.5%;
   scroll-behavior: smooth;
+  //overflow-x: hidden;
+  scrollbar-gutter: stable;
 
   // Use smooth scrolling for anchor links—but not if the reduce motion accessibility preference is enabled
   @media (prefers-reduced-motion: reduce) {
@@ -72,8 +74,13 @@ button {
 body {
   position: relative;
   //max-width: $sectionMaxWidth;
-  width: 100vw;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+
+  //width: 100vw;
+  //height: 100%;
   margin: 0 auto;
   padding: 0;
   background-color: var(--body-background);

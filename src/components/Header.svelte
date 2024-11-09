@@ -85,21 +85,7 @@ const toggleTheme = () => {
 >
 	<h1 class="menu__title">
 		<span class="visuallyhidden">Marcello Palmitessa</span>
-		<span class="header-title-word" style:--char-count={'MARCELLO'.length}>
-      {#each Array.from('MARCELLO') as char, charIndex}
-        <span class="header-title-char">
-          <span aria-hidden="true" style:--char-index={charIndex}>{char}</span>
-        </span>
-      {/each}
-      </span>
-
-		<span class="header-title-word" style:--char-count={'PALMITESSA'.length}>
-      {#each Array.from('PALMITESSA') as char, charIndex}
-        <span class="header-title-char">
-          <span aria-hidden="true" style:--char-index={charIndex}>{char}</span>
-        </span>
-      {/each}
-      </span>
+		<span>MP</span>
 	</h1>
 
 	<button type="button" class="mobile-toggle-menu" aria-expanded={showMobileMenu} on:click={()=>showMobileMenu = !showMobileMenu}>
@@ -159,7 +145,7 @@ const toggleTheme = () => {
 
   .header {
     --menu-background: var(--theme-background);
-    position: fixed;
+    position: sticky;
     top: 0;
     display: flex;
     justify-content: space-between;

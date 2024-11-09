@@ -1,24 +1,22 @@
 ---
 const t1 = 'MARCELLO PALMITESSA';
-const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
+const t2 = 'FREELANCE FULL STACK';
+const t3 = 'ARCHITECT DEVELOPER';
+const t4 = 'MENTOR TEAM LEADER';
 ---
 
 <script>
-  import gsap from 'gsap';
-  import {ScrollTrigger} from "gsap/ScrollTrigger";
-  import {getHeroTimeline} from '@/lib/animations';
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  window.addEventListener('load', (event) => {
-    const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
-    const title1 = document.querySelector<HTMLElement>('.hero2-title1');
-    // const title2 = document.querySelector<HTMLElement>('.hero2-title2');
-    // const chars2 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title2 .char span'));
-
-    const tl = getHeroTimeline(chars1, title1);
-    tl.play();
-  });
+  // import gsap from 'gsap';
+  // import {ScrollTrigger} from "gsap/ScrollTrigger";
+  // import {getHeroTimeline} from '@/lib/animations';
+  //
+  // gsap.registerPlugin(ScrollTrigger);
+  //
+  // window.addEventListener('load', (event) => {
+  //   const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
+  //   const tl = getHeroTimeline(chars1);
+  //   tl.play();
+  // });
 </script>
 
 <div class="main-content">
@@ -43,7 +41,27 @@ const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
         </span>
       ))}
       </span>
+
+      <span class="word">
+      {Array.from(t3).map((char, charIndex) => (
+          <span class="char">
+          {char === ' ' && <span class="space">&nbsp;</span>}
+            {char !== ' ' && <span>{char}</span>}
+        </span>
+      ))}
+      </span>
+
+      <span class="word">
+      {Array.from(t4).map((char, charIndex) => (
+          <span class="char">
+          {char === ' ' && <span class="space">&nbsp;</span>}
+            {char !== ' ' && <span>{char}</span>}
+        </span>
+      ))}
+      </span>
     </h2>
+
+    <img class="hero2-img" src="/img/marcello-and-tato.jpg" alt=""/>
   </div>
 
 </div>
@@ -59,20 +77,30 @@ const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
   .hero2 {
     overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 1rem;
+    width: 100%;
     @include container;
+    /*padding: 0;*/
 
     & {
-      height: calc(100vh - var(--menu-height));
-      padding: 3rem 1rem 0 1rem;
+      --color-line: var(--color-dark);
+      --line-size: 1.5rem;
+
       margin-bottom: 2rem;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      background-image: linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+      background-size: var(--line-size) var(--line-size);
+      background-position: center center;
+      background-attachment: fixed;
     }
   }
 
   .hero2-title1 {
+    /*flex: 0 0 80%;*/
     position: relative; // needed for reveal animation
     width: 100%;
     max-width: none;
@@ -80,10 +108,10 @@ const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
     font-family: var(--body-font-family);
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
-    font-size: 8vw;
+    font-size: 6.5vw;
     font-weight: 700;
     line-height: 1.1;
-    text-align: center;
+    text-align: justify;
     text-wrap: balance;
 
     span:not(.char) {
@@ -97,5 +125,27 @@ const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
     .space {
       width: 1ch;
     }
+
+    /*.word:nth-child(3),*/
+    /*.word:nth-child(5) {*/
+    /*  font-style: italic;*/
+    /*}*/
+  }
+
+  .hero2-img {
+    /*flex: 0 0 20%;*/
+    /*width: 20%;*/
+    filter: grayscale(1);
+
+    &:hover,
+    &:focus-visible {
+      filter: none;
+    }
+  }
+
+  .word {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
   }
 </style>
