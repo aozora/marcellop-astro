@@ -1,52 +1,34 @@
-import gsap from 'gsap/dist/gsap';
+import gsap from "gsap/dist/gsap";
 
 export function getHeroTimeline(
-	chars1: Array<HTMLElement>,
-	title1: HTMLElement,
-	title2: HTMLElement,
-	chars2: Array<HTMLElement>,
-	menuTitleChars: Array<HTMLElement>
+  chars1: Array<HTMLElement>,
+  title1: HTMLElement | null,
+  // title2: HTMLElement | null,
+  // chars2: Array<HTMLElement>,
+  // menuTitleChars: Array<HTMLElement>
 ): gsap.core.Timeline {
-	const tl = gsap.timeline({ paused: true });
+  console.log({
+    chars1,
+    title1,
+    // title2,
+    // chars2,
+  });
 
-	tl.fromTo(
-		menuTitleChars,
-		{
-			x: '-100%'
-		},
-		{
-			x: '0%',
-			ease: 'Power1.easeInOut',
-			stagger: 0.1,
-			duration: 1
-		}
-	)
-		.fromTo(
-			chars2,
-			{
-				x: '-100%'
-			},
-			{
-				x: '0%',
-				ease: 'Power1.easeInOut',
-				stagger: 0.1,
-				duration: 1
-			},
-			'-=90%'
-		)
-		.fromTo(
-			chars2,
-			{
-				'--text-weight': 700
-			},
-			{
-				'--text-weight': 300,
-				yoyo: true,
-				repeat: -1,
-				duration: 2,
-				stagger: 0.1
-			}
-		);
+  const tl = gsap.timeline({ paused: true });
 
-	return tl;
+  tl.fromTo(
+    chars1,
+    {
+      "--text-weight": 300,
+    },
+    {
+      "--text-weight": 700,
+      yoyo: true,
+      repeat: -1,
+      duration: 2,
+      stagger: 0.1,
+    },
+  );
+
+  return tl;
 }

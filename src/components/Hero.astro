@@ -1,0 +1,101 @@
+---
+const t1 = 'MARCELLO PALMITESSA';
+const t2 = 'FREELANCE FULL STACK ARCHITECT DEVELOPER MENTOR TEAM LEADER';
+---
+
+<script>
+  import gsap from 'gsap';
+  import {ScrollTrigger} from "gsap/ScrollTrigger";
+  import {getHeroTimeline} from '@/lib/animations';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener('load', (event) => {
+    const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
+    const title1 = document.querySelector<HTMLElement>('.hero2-title1');
+    // const title2 = document.querySelector<HTMLElement>('.hero2-title2');
+    // const chars2 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title2 .char span'));
+
+    const tl = getHeroTimeline(chars1, title1);
+    tl.play();
+  });
+</script>
+
+<div class="main-content">
+  <div class="hero2">
+    <h2 class="hero2-title1">
+      <span class="visuallyhidden">{t1}&nbsp;{t2}</span>
+
+      <span class="word">
+      {Array.from(t1).map((char, charIndex) => (
+          <span class="char">
+            {char === ' ' && <span class="space">&nbsp;</span>}
+            {char !== ' ' && <span>{char}</span>}
+        </span>
+      ))}
+      </span>
+
+      <span class="word">
+      {Array.from(t2).map((char, charIndex) => (
+          <span class="char">
+          {char === ' ' && <span class="space">&nbsp;</span>}
+            {char !== ' ' && <span>{char}</span>}
+        </span>
+      ))}
+      </span>
+    </h2>
+  </div>
+
+</div>
+
+<style lang="scss">
+  @use '../styles/shared' as *;
+
+  .main-content {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .hero2 {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include container;
+
+    & {
+      height: calc(100vh - var(--menu-height));
+      padding: 3rem 1rem 0 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  .hero2-title1 {
+    position: relative; // needed for reveal animation
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    font-family: var(--body-font-family);
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+    font-size: 8vw;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    text-wrap: balance;
+
+    span:not(.char) {
+      /*--delay: calc((var(--char-index) + 1) * 400ms);*/
+      --text-weight-max: 700;
+      --text-weight-min: 300;
+      --text-weight: var(--text-weight-max);
+      font-weight: var(--text-weight);
+    }
+
+    .space {
+      width: 1ch;
+    }
+  }
+</style>

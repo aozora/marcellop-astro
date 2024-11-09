@@ -1,56 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Hero from '@/components/Hero.svelte';
+import Hero from '@/components/Hero.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-  <Hero client:load/>
+  <Hero />
 </Layout>
 
-<style lang="scss">
-  @use '../styles/shared' as *;
-
-  .main-content {
-    overflow: hidden;
-    position: relative;
-  }
-
-  .hero2 {
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include container;
-
-    & {
-      height: calc(100vh - var(--menu-height));
-      padding: 3rem 1rem 0 1rem;
-      margin-bottom: 2rem;
-    }
-
-    h2 {
-      position: relative; // needed for reveal animation
-      width: 100%;
-      max-width: none;
-      margin: 0 auto;
-      font-family: var(--body-font-family);
-      font-optical-sizing: auto;
-      font-variation-settings: "slnt" 0, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
-      font-size: 20vw;
-      font-weight: 700;
-      line-height: 1.1;
-      text-align: center;
-
-      span:not(.char) {
-        --delay: calc((var(--char-index) + 1) * 400ms);
-        --text-weight-max: 700;
-        --text-weight-min: 300;
-        --text-weight: var(--text-weight-max);
-        font-weight: var(--text-weight);
-      }
-    }
-  }
-
-</style>
