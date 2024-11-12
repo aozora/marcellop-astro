@@ -6,17 +6,33 @@ const t4 = 'MENTOR TEAM LEADER';
 ---
 
 <script>
-  // import gsap from 'gsap';
-  // import {ScrollTrigger} from "gsap/ScrollTrigger";
-  // import {getHeroTimeline} from '@/lib/animations';
-  //
-  // gsap.registerPlugin(ScrollTrigger);
-  //
-  // window.addEventListener('load', (event) => {
-  //   const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
-  //   const tl = getHeroTimeline(chars1);
-  //   tl.play();
-  // });
+  import gsap from 'gsap';
+  import {ScrollTrigger} from "gsap/ScrollTrigger";
+  import {getHeroTimeline} from '@/lib/animations';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener('load', (event) => {
+    const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo(
+      chars1,
+      {
+        "--text-weight": 500,
+        // color: "var(--theme-foreground)",
+      },
+      {
+        "--text-weight": 700,
+        // color: "var(--theme-brand)",
+        yoyo: true,
+        repeat: -1,
+        duration: 2,
+        stagger: 0.1,
+      },
+    );
+    tl.play();
+  });
 </script>
 
 <!--<div class="main-content">-->
@@ -24,7 +40,7 @@ const t4 = 'MENTOR TEAM LEADER';
     <h2 class="hero2-title1">
       <span class="visuallyhidden">{t1}&nbsp;{t2}</span>
 
-      <span class="word">
+      <span class="word title-top">
       {Array.from(t1).map((char, charIndex) => (
           <span class="char">
             {char === ' ' && <span class="space">&nbsp;</span>}
@@ -85,7 +101,7 @@ const t4 = 'MENTOR TEAM LEADER';
     /*padding: 0;*/
 
     & {
-      --color-line: var(--color-dark);
+      --color-line: #1d1c1c;
       --line-size: 1.5rem;
 
       margin-bottom: 2rem;
@@ -113,6 +129,10 @@ const t4 = 'MENTOR TEAM LEADER';
     line-height: 1.1;
     text-align: justify;
     text-wrap: balance;
+
+    .title-top {
+      color: var(--theme-brand);
+    }
 
     span:not(.char) {
       /*--delay: calc((var(--char-index) + 1) * 400ms);*/
