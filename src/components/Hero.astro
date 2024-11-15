@@ -1,89 +1,64 @@
 ---
-const t1 = 'MARCELLO PALMITESSA';
-const t2 = 'FREELANCE FULL STACK';
-const t3 = 'ARCHITECT DEVELOPER';
-const t4 = 'MENTOR TEAM LEADER';
+const t1 = "MARCELLO PALMITESSA";
+const t2 = "FREELANCE FULL STACK";
+const t3 = "ARCHITECT DEVELOPER";
+const t4 = "MENTOR TEAM LEADER";
 ---
 
-<script>
-  import gsap from 'gsap';
-  import {ScrollTrigger} from "gsap/ScrollTrigger";
-  import {getHeroTimeline} from '@/lib/animations';
+<div class="hero2">
+  <h2 class="hero2-title1">
+    <span class="visuallyhidden">{t1}&nbsp;{t2}</span>
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  window.addEventListener('load', (event) => {
-    const chars1 = Array.from(document.querySelectorAll<HTMLElement>('.hero2-title1 .char span'));
-    const tl = gsap.timeline({ paused: true });
-
-    tl.fromTo(
-      chars1,
+    <span class="word title-top">
       {
-        "--text-weight": 500,
-        // color: "var(--theme-foreground)",
-      },
+        Array.from(t1).map((char) => (
+          <span class="char">
+            {char === " " && <span class="space">&nbsp;</span>}
+            {char !== " " && <span>{char}</span>}
+          </span>
+        ))
+      }
+    </span>
+
+    <span class="word">
       {
-        "--text-weight": 700,
-        // color: "var(--theme-brand)",
-        yoyo: true,
-        repeat: -1,
-        duration: 2,
-        stagger: 0.1,
-      },
-    );
-    tl.play();
-  });
-</script>
-
-<!--<div class="main-content">-->
-  <div class="hero2">
-    <h2 class="hero2-title1">
-      <span class="visuallyhidden">{t1}&nbsp;{t2}</span>
-
-      <span class="word title-top">
-      {Array.from(t1).map((char, charIndex) => (
+        Array.from(t2).map((char) => (
           <span class="char">
-            {char === ' ' && <span class="space">&nbsp;</span>}
-            {char !== ' ' && <span>{char}</span>}
-        </span>
-      ))}
-      </span>
+            {char === " " && <span class="space">&nbsp;</span>}
+            {char !== " " && <span>{char}</span>}
+          </span>
+        ))
+      }
+    </span>
 
-      <span class="word">
-      {Array.from(t2).map((char, charIndex) => (
+    <span class="word">
+      {
+        Array.from(t3).map((char) => (
           <span class="char">
-          {char === ' ' && <span class="space">&nbsp;</span>}
-            {char !== ' ' && <span>{char}</span>}
-        </span>
-      ))}
-      </span>
+            {char === " " && <span class="space">&nbsp;</span>}
+            {char !== " " && <span>{char}</span>}
+          </span>
+        ))
+      }
+    </span>
 
-      <span class="word">
-      {Array.from(t3).map((char, charIndex) => (
+    <span class="word">
+      {
+        Array.from(t4).map((char) => (
           <span class="char">
-          {char === ' ' && <span class="space">&nbsp;</span>}
-            {char !== ' ' && <span>{char}</span>}
-        </span>
-      ))}
-      </span>
+            {char === " " && <span class="space">&nbsp;</span>}
+            {char !== " " && <span>{char}</span>}
+          </span>
+        ))
+      }
+    </span>
+  </h2>
 
-      <span class="word">
-      {Array.from(t4).map((char, charIndex) => (
-          <span class="char">
-          {char === ' ' && <span class="space">&nbsp;</span>}
-            {char !== ' ' && <span>{char}</span>}
-        </span>
-      ))}
-      </span>
-    </h2>
-
-    <img class="hero2-img" src="/img/marcello-and-tato.jpg" alt=""/>
-  </div>
-
-<!--</div>-->
+  <img class="hero2-img" src="/img/marcello-and-tato.jpg" alt="" />
+</div>
 
 <style lang="scss">
-  @use '../styles/shared' as *;
+  @use "../styles/shared" as *;
 
   .main-content {
     overflow: hidden;
@@ -98,7 +73,6 @@ const t4 = 'MENTOR TEAM LEADER';
     gap: 1rem;
     width: 100%;
     @include container;
-    /*padding: 0;*/
 
     & {
       --color-line: #1d1c1c;
@@ -107,8 +81,12 @@ const t4 = 'MENTOR TEAM LEADER';
       margin-bottom: 2rem;
       padding-top: 3rem;
       padding-bottom: 3rem;
-      background-image: linear-gradient(to right, var(--color-line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+      background-image: linear-gradient(
+          to right,
+          var(--color-line) 1px,
+          transparent 1px
+        ),
+        linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
       background-size: var(--line-size) var(--line-size);
       background-position: center center;
       background-attachment: fixed;
@@ -123,7 +101,17 @@ const t4 = 'MENTOR TEAM LEADER';
     margin: 0 auto;
     font-family: var(--body-font-family);
     font-optical-sizing: auto;
-    font-variation-settings: "slnt" 0, "GRAD" 0, "XOPQ" 96, "XTRA" 468, "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
+    font-variation-settings:
+      "slnt" 0,
+      "GRAD" 0,
+      "XOPQ" 96,
+      "XTRA" 468,
+      "YOPQ" 79,
+      "YTAS" 750,
+      "YTDE" -203,
+      "YTFI" 738,
+      "YTLC" 514,
+      "YTUC" 712;
     font-size: 6.5vw;
     font-weight: 700;
     line-height: 1.1;
@@ -173,3 +161,32 @@ const t4 = 'MENTOR TEAM LEADER';
     justify-content: space-evenly;
   }
 </style>
+
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  window.addEventListener("load", () => {
+    const chars1 = Array.from(
+      document.querySelectorAll<HTMLElement>(".hero2-title1 .char span"),
+    );
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo(
+      chars1,
+      {
+        "--text-weight": 500,
+      },
+      {
+        "--text-weight": 900,
+        yoyo: true,
+        repeat: -1,
+        duration: 2,
+        stagger: 0.1,
+      },
+    );
+    tl.play();
+  });
+</script>

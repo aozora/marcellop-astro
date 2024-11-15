@@ -13,3 +13,7 @@
   * datocms
   * sanity
   * strapi
+* Skills
+  * accessibility
+  * responsive
+  * 
