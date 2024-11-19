@@ -2,9 +2,15 @@
 import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import About from "@/components/About.svelte";
+import Portfolio from "@/components/Portfolio.svelte";
+import { getCollection } from "astro:content";
+
+const portfolio = await getCollection("portfolio");
+console.log({ portfolio });
 ---
 
 <Layout title="Welcome to Astro.">
   <Hero />
   <About />
+  <Portfolio portfolio={portfolio} />
 </Layout>

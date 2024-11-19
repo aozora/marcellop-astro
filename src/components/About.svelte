@@ -1,5 +1,5 @@
 <section class="about">
-  <p>I'm an independent full-stack engineer, architect, I lead teams of developers and designers implementing creative designs with a strong focus on accessibility, sustainability, and performance.</p>
+  <p>I'm an independent full-stack engineer and architect, I lead teams of developers and designers implementing creative designs with a strong focus on accessibility, sustainability, and performance.</p>
 </section>
 
 <style lang="scss">
