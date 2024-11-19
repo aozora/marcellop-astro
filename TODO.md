@@ -1,7 +1,7 @@
 # TODO
 
 * resume: redirect to linkedin profile page
-* portfolio
+* portfolio / selected works
   * under nda
     * aidexa
     * ntt global
