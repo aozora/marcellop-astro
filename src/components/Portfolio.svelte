@@ -7,7 +7,7 @@
 
   let {portfolio}: Props = $props();
 
-  console.log({portfolio})
+  // console.log({portfolio})
   // console.log(portfolio.data)
 </script>
 

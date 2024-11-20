@@ -11,7 +11,7 @@ const portfolioCollection = defineCollection({
       role: z.string(),
       collaborators: z.array(z.string()),
       techStack: z.array(z.string()),
-      description: z.string(),
+      // description: z.string(),
     }),
   // ),
 });

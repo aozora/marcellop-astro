@@ -1,9 +1,10 @@
 ---
-title: 'Lorem Ipsum'
+title: 'B2B Web Application'
 nda: true
 picture: '/img/xxxxxx'
-collaborators: ["goodbase.studio"]
-description: 'Lorem Ipsum'
-techStack: ["","",""]
-role: ""
+collaborators: []
+techStack: ["Microsoft ASP.NET","WebServices","WCF Services"]
+role: "Tech leader"
 ---
+
+B2B E-Commerce Web Application for resellers, custom cart and SAP integration. 

@@ -6,7 +6,7 @@
     * aidexa
     * ntt global
     * tetrapack
-    * alpitour
+    * alpitour (b2c, b2b viaggidea/lite)
     * b2b pirelli
 * CMS
   * sitecore
