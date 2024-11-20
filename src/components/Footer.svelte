@@ -50,6 +50,41 @@
     }
   }
 
+  .menu__social {
+    grid-area: social;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      gap: 1rem;
+      max-width: none;
+      height: 1.778rem;
+      margin: 0 0 3rem 0;
+      padding: 0;
+    }
+
+    span {
+      @include visuallyhidden;
+    }
+
+    a {
+      display: block;
+      //width: 1.778rem;
+      height: 1.778rem;
+      padding: .2rem;
+      color: var(--theme-foreground);
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--theme-brand);
+        border-color: var(--theme-brand);
+      }
+    }
+  }
+
   .footer__copyright {
     grid-area: copyright;
     margin: 0 auto 2rem auto;

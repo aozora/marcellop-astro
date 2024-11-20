@@ -4,6 +4,8 @@
 
 <style lang="scss">
   .about {
+    margin: 40vh 0;
+
     p {
       font-size: var(--text-scale-48);
       --text-weight: 700;

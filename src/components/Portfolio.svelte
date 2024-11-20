@@ -13,6 +13,7 @@
 
 <section class="portfolio">
   <h2>Portfolio</h2>
+  <p class="disclaimer">Some projects are covered by a non disclosure agreement so several details are not public.</p>
 
   <div class="portfolio-items">
     {#each portfolio as entry}
@@ -25,8 +26,18 @@
 
 
 <style lang="scss">
-  .portfolio{
+  @use "../styles/shared" as *;
 
+  .portfolio {
+    @include container;
+
+    h2 {
+      --text-weight: 700;
+    }
+  }
+
+  .disclaimer {
+    font-size: 0.75rem;
   }
 
   .portfolio-items {
@@ -34,6 +45,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
+    margin: 2rem 0;
   }
 
   .portfolio-item {
