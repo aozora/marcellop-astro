@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import Hero from "@/components/Hero.astro";
 import About from "@/components/About.svelte";
 import Portfolio from "@/components/Portfolio.svelte";
+import Skills from "@/components/Skills.svelte";
 import { getCollection } from "astro:content";
 
 const portfolio = await getCollection("portfolio");
@@ -14,4 +15,5 @@ const portfolio = await getCollection("portfolio");
   <Hero />
   <About />
   <Portfolio portfolio={portfolio} />
+  <Skills />
 </Layout>

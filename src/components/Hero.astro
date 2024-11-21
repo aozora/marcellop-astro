@@ -54,7 +54,7 @@ const t4 = "MENTOR TEAM LEADER";
     </span>
   </h2>
 
-  <img class="hero2-img" src="/img/marcello-and-tato.jpg" alt="" />
+  <!--<img class="hero2-img" src="/img/marcello-and-tato.jpg" alt="" />-->
 </div>
 
 <style lang="scss">
@@ -69,7 +69,8 @@ const t4 = "MENTOR TEAM LEADER";
     overflow: hidden;
     position: relative;
     display: grid;
-    grid-template-columns: 80% 20%;
+    /*grid-template-columns: 80% 20%;*/
+    grid-template-columns: 100%;
     gap: 1rem;
     width: 100%;
     @include container;
@@ -100,6 +101,10 @@ const t4 = "MENTOR TEAM LEADER";
     max-width: none;
     margin: 0 auto;
     font-family: var(--body-font-family);
+    /*font-size: 6.5vw;*/
+    font-size: 7.5vw;
+    font-weight: 700;
+    line-height: 1.2;
     font-optical-sizing: auto;
     font-variation-settings:
       "slnt" 0,
@@ -112,11 +117,9 @@ const t4 = "MENTOR TEAM LEADER";
       "YTFI" 738,
       "YTLC" 514,
       "YTUC" 712;
-    font-size: 6.5vw;
-    font-weight: 700;
-    line-height: 1.1;
     text-align: justify;
     text-wrap: balance;
+    color: var(--theme-foreground);
 
     .title-top {
       color: var(--theme-brand);

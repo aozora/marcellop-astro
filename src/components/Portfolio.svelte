@@ -31,9 +31,10 @@
   .portfolio {
     @include container;
 
-    h2 {
-      --text-weight: 700;
-    }
+    //h2 {
+    //  --text-weight: 700;
+    //  color: var(--theme-brand);
+    //}
   }
 
   .disclaimer {
