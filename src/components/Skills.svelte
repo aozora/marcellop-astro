@@ -45,16 +45,23 @@
 
     h3 {
       margin-bottom: 3rem;
-      font-size: 6vw;
+      font-size: 20vw;
       color: var(--theme-foreground);
+
+      @media (min-width: 64em) {
+        font-size: 6vw;
+      }
     }
 
     h3 + p {
-      font-size: 4vw;
+      font-size: 6vw;
       line-height: 1.3;
-      //text-transform: uppercase;
       --text-weight: 700;
       color: var(--color-highlight);
+
+      @media (min-width: 64em) {
+        font-size: 4vw;
+      }
     }
 
 

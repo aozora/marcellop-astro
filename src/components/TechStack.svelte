@@ -66,8 +66,12 @@
 
     h3 {
       margin-bottom: 3rem;
-      font-size: 10vw;
+      font-size: 13vw;
       color: var(--theme-foreground);
+
+      @media (min-width: 64em) {
+        font-size: 10vw;
+      }
     }
 
     ul, li {
@@ -98,10 +102,14 @@
 
     li {
       strong {
-        font-size: 6vw;
+        font-size: 10vw;
         text-transform: uppercase;
         --text-weight: 700;
         color: var(--color-highlight);
+
+        @media (min-width: 64em) {
+          font-size: 6vw;
+        }
 
         + p {
           font-size: 4vw;

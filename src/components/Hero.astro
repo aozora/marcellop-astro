@@ -1,17 +1,46 @@
 ---
-const t1 = "MARCELLO PALMITESSA";
-const t2 = "FREELANCE FULL STACK";
-const t3 = "ARCHITECT DEVELOPER";
-const t4 = "MENTOR TEAM LEADER";
+const title1 = "MARCELLO PALMITESSA";
+const title2 = "FREELANCE FULL STACK";
+const title3 = "ARCHITECT DEVELOPER";
+const title4 = "MENTOR TEAM LEADER";
+
+const title1Split = title1.split(" ");
 ---
 
 <div class="hero2">
   <h2 class="hero2-title1">
-    <span class="visuallyhidden">{t1}&nbsp;{t2}</span>
+    <span class="visuallyhidden"
+      >{title1}, {title2}
+      &nbsp;{title3}&nbsp;{title4}</span
+    >
 
-    <span class="word title-top">
+    <span class="title-top">
+      <span class="word marcello">
+        {
+          Array.from(title1Split[0]).map((char) => (
+            <span class="char">
+              {char === " " && <span class="space">&nbsp;</span>}
+              {char !== " " && <span>{char}</span>}
+            </span>
+          ))
+        }
+      </span>
+      <span class="space">&nbsp;</span>
+      <span class="word palmitessa">
+        {
+          Array.from(title1Split[1]).map((char) => (
+            <span class="char">
+              {char === " " && <span class="space">&nbsp;</span>}
+              {char !== " " && <span>{char}</span>}
+            </span>
+          ))
+        }
+      </span>
+    </span>
+
+    <span class="word">
       {
-        Array.from(t1).map((char) => (
+        Array.from(title2).map((char) => (
           <span class="char">
             {char === " " && <span class="space">&nbsp;</span>}
             {char !== " " && <span>{char}</span>}
@@ -22,7 +51,7 @@ const t4 = "MENTOR TEAM LEADER";
 
     <span class="word">
       {
-        Array.from(t2).map((char) => (
+        Array.from(title3).map((char) => (
           <span class="char">
             {char === " " && <span class="space">&nbsp;</span>}
             {char !== " " && <span>{char}</span>}
@@ -33,18 +62,7 @@ const t4 = "MENTOR TEAM LEADER";
 
     <span class="word">
       {
-        Array.from(t3).map((char) => (
-          <span class="char">
-            {char === " " && <span class="space">&nbsp;</span>}
-            {char !== " " && <span>{char}</span>}
-          </span>
-        ))
-      }
-    </span>
-
-    <span class="word">
-      {
-        Array.from(t4).map((char) => (
+        Array.from(title4).map((char) => (
           <span class="char">
             {char === " " && <span class="space">&nbsp;</span>}
             {char !== " " && <span>{char}</span>}
@@ -95,7 +113,22 @@ const t4 = "MENTOR TEAM LEADER";
     color: var(--theme-foreground);
 
     .title-top {
+      display: flex;
+      flex-direction: column;
       color: var(--theme-brand);
+      font-size: 31vw;
+
+      @media (min-width: 64em) {
+        flex-direction: row;
+        font-size: inherit;
+      }
+
+      .space {
+        display: none;
+        @media (min-width: 64em) {
+          display: flex;
+        }
+      }
     }
 
     span:not(.char) {
