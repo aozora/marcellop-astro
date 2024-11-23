@@ -53,8 +53,6 @@ const t4 = "MENTOR TEAM LEADER";
       }
     </span>
   </h2>
-
-  <!--<img class="hero2-img" src="/img/marcello-and-tato.jpg" alt="" />-->
 </div>
 
 <style lang="scss">
@@ -69,7 +67,6 @@ const t4 = "MENTOR TEAM LEADER";
     overflow: hidden;
     position: relative;
     display: grid;
-    /*grid-template-columns: 80% 20%;*/
     grid-template-columns: 100%;
     gap: 1rem;
     width: 100%;
@@ -82,42 +79,17 @@ const t4 = "MENTOR TEAM LEADER";
       margin-bottom: 2rem;
       padding-top: 3rem;
       padding-bottom: 3rem;
-      /*background-image: linear-gradient(*/
-      /*    to right,*/
-      /*    var(--color-line) 1px,*/
-      /*    transparent 1px*/
-      /*  ),*/
-      /*  linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);*/
-      /*background-size: var(--line-size) var(--line-size);*/
-      /*background-position: center center;*/
-      /*background-attachment: fixed;*/
     }
   }
 
   .hero2-title1 {
-    /*flex: 0 0 80%;*/
     position: relative; // needed for reveal animation
     width: 100%;
     max-width: none;
     margin: 0 auto;
-    font-family: var(--body-font-family);
-    /*font-size: 6.5vw;*/
-    font-size: 7.5vw;
-    /*font-weight: 700;*/
-    font-weight: 500;
-    line-height: 1.2;
-    font-optical-sizing: auto;
-    font-variation-settings:
-      "slnt" 0,
-      "GRAD" 0,
-      "XOPQ" 96,
-      "XTRA" 468,
-      "YOPQ" 79,
-      "YTAS" 750,
-      "YTDE" -203,
-      "YTFI" 738,
-      "YTLC" 514,
-      "YTUC" 712;
+    font-size: 15vw;
+    --text-weight: 900;
+    line-height: 1;
     text-align: justify;
     text-wrap: balance;
     color: var(--theme-foreground);
@@ -128,25 +100,22 @@ const t4 = "MENTOR TEAM LEADER";
 
     span:not(.char) {
       /*--delay: calc((var(--char-index) + 1) * 400ms);*/
-      --text-weight-max: 700;
-      --text-weight-min: 300;
+      --text-weight-max: 900;
+      --text-weight-min: 500;
       --text-weight: var(--text-weight-max);
       font-weight: var(--text-weight);
+
+      @supports (font-variation-settings: normal) {
+        font-variation-settings: "wght" var(--text-weight);
+      }
     }
 
     .space {
       width: 1ch;
     }
-
-    /*.word:nth-child(3),*/
-    /*.word:nth-child(5) {*/
-    /*  font-style: italic;*/
-    /*}*/
   }
 
   .hero2-img {
-    /*flex: 0 0 20%;*/
-    /*width: 20%;*/
     height: 100%;
     max-width: 100%;
     width: 100%;
@@ -166,31 +135,33 @@ const t4 = "MENTOR TEAM LEADER";
   }
 </style>
 
-<!--<script>-->
-<!--  import gsap from "gsap";-->
-<!--  import { ScrollTrigger } from "gsap/ScrollTrigger";-->
+<script>
+  import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-<!--  gsap.registerPlugin(ScrollTrigger);-->
+  gsap.registerPlugin(ScrollTrigger);
 
-<!--  window.addEventListener("load", () => {-->
-<!--    const chars1 = Array.from(-->
-<!--      document.querySelectorAll<HTMLElement>(".hero2-title1 .char span"),-->
-<!--    );-->
-<!--    const tl = gsap.timeline({ paused: true });-->
+  window.addEventListener("load", () => {
+    const chars1 = Array.from(
+      document.querySelectorAll<HTMLElement>(
+        ".hero2-title1 :not(.title-top) .char span",
+      ),
+    );
+    const tl = gsap.timeline({ paused: true });
 
-<!--    tl.fromTo(-->
-<!--      chars1,-->
-<!--      {-->
-<!--        "&#45;&#45;text-weight": 500,-->
-<!--      },-->
-<!--      {-->
-<!--        "&#45;&#45;text-weight": 900,-->
-<!--        yoyo: true,-->
-<!--        repeat: -1,-->
-<!--        duration: 2,-->
-<!--        stagger: 0.1,-->
-<!--      },-->
-<!--    );-->
-<!--    tl.play();-->
-<!--  });-->
-<!--</script>-->
+    tl.fromTo(
+      chars1,
+      {
+        "--text-weight": 500,
+      },
+      {
+        "--text-weight": 900,
+        yoyo: true,
+        repeat: -1,
+        duration: 2,
+        stagger: 0.1,
+      },
+    );
+    tl.play();
+  });
+</script>

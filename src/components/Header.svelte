@@ -85,7 +85,7 @@ const toggleTheme = () => {
 >
 	<h1 class="menu__title">
 		<span class="visuallyhidden">Marcello Palmitessa</span>
-		<span>MP</span>
+		<span aria-hidden="true">MP</span>
 	</h1>
 
 	<button type="button" class="mobile-toggle-menu" aria-expanded={showMobileMenu} on:click={()=>showMobileMenu = !showMobileMenu}>

@@ -66,7 +66,7 @@
 
     h3 {
       margin-bottom: 3rem;
-      font-size: 6vw;
+      font-size: 10vw;
       color: var(--theme-foreground);
     }
 

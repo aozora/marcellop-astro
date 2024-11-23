@@ -29,9 +29,10 @@
   @use "../styles/shared" as *;
 
   .about {
-    @include container;
+    //@include container;
 
     & {
+      height: 100vh;
       margin: 40vh 0;
     }
   }
@@ -66,11 +67,14 @@
     svg {
       grid-column: 1;
       grid-row: 2;
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
 
       @media (min-width: 64em) {
         grid-column: 2;
         grid-row: 1;
+        width: 100%;
+        margin: 0;
       }
     }
   }
