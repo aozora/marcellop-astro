@@ -1,37 +1,23 @@
 
-@font-face {
-  font-family: "Rock Salt";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/rock-salt-v22-latin-regular.woff2') format('woff2');
-}
 
-@font-face {
-  font-family: "TypeMaestro";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('/fonts/TypeMaestro/font.woff2') format('woff2'),
-  url('/fonts/TypeMaestro/font.woff') format('woff');
-}
 
 //@font-face {
-//  font-family: 'Inter';
-//  font-style: normal;
-//  font-weight: 400;
 //  font-display: swap;
-//  src: url("/fonts/Inter-Regular.woff2?v=3.19") format("woff2");
-//}
-//
-//@font-face {
-//  font-family: 'Inter var';
-//  font-weight: 100 900;
-//  font-display: swap;
+//  src: url("/fonts/MangoGrotesque/MangoGrotesque-Medium.woff2") format('woff2');
+//  font-family: "MangoGrotesque";
+//  font-weight: 500;
 //  font-style: normal;
-//  font-named-instance: 'Regular';
-//  src: url("/fonts/Inter-roman.var.woff2?v=3.19") format("woff2");
 //}
+
+@font-face {
+  font-display: swap;
+  src: url("/fonts/MangoGrotesque/Mango Grotesque-VF.ttf") format('woff2-variations');
+  font-family: "MangoGrotesque";
+  font-weight: 100 1000;
+  font-style: normal;
+  font-stretch: 25% 151%;
+}
+
 
 @font-face {
   font-display: swap;

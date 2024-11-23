@@ -41,7 +41,7 @@
   @use "../styles/shared" as *;
 
   .skills {
-    @include container;
+    //@include container;
 
     h3 {
       margin-bottom: 3rem;
@@ -73,14 +73,6 @@
       overflow: hidden;
       background-color: var(--theme-background);
       z-index: var(--index);
-
-      > ul {
-        @include container-layout-grid;
-
-        li {
-          grid-column: 6/12;
-        }
-      }
     }
 
   }

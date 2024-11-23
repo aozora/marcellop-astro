@@ -78,9 +78,6 @@ body {
   flex-direction: column;
   min-height: 100%;
   width: 100%;
-
-  //width: 100vw;
-  //height: 100%;
   margin: 0 auto;
   padding: 0;
   background-color: var(--body-background);
@@ -98,19 +95,8 @@ body {
 
   @supports (font-variation-settings: normal) {
     font-family: var(--variable-font-family);
-    // this settings depends on th vf selected
     font-variation-settings: 'wght' var(--text-weight);
-    /* ,
-       'wdth' var(--text-width),
-       'opsz' var(--text-opticalsize); */
   }
-
-  //@if $render-vertical-rhythm-lines {
-  //  background-image: linear-gradient(to bottom, hsla(200, 100%, 50%, .3) 1px, transparent 1px);
-  //  background-position: left top;
-  //  background-repeat: repeat;
-  //  background-size: 100% vr(1);
-  //}
 
   & {
     // > don't use font-smoothing for light text on dark background!!

@@ -20,13 +20,11 @@
     This site is built with&nbsp;
     <a target="_blank" rel="noopener noreferrer" href="https://svelte.dev/">
       Svelte
-    </a>&nbsp;and<a target="_blank" rel="noopener noreferrer" href="https://astro.build">Astro</a>
-    &nbsp;and hosted on&nbsp;
-    <a target="_blank" rel="noopener noreferrer" href="https://vercel.com/">
+    </a>&nbsp;and <a target="_blank" rel="noopener noreferrer" href="https://astro.build">Astro</a>
+    &nbsp;and hosted on&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://vercel.com/">
       Vercel
     </a>
-    . The source code is hosted on&nbsp;
-    <a target="_blank" rel="noopener noreferrer" href="https://github.com/aozora/marcellop">
+    . The source code is hosted on&nbsp;<a target="_blank" rel="noopener noreferrer" href="https://github.com/aozora/marcellop">
       GitHub
     </a>
     .

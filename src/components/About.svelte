@@ -30,18 +30,28 @@
 
   .about {
     @include container;
-    margin: 40vh 0;
+
+    & {
+      margin: 40vh 0;
+    }
   }
 
   .about-container {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
     gap: 1rem;
     width: 100%;
 
+    @media (min-width: 64em) {
+      grid-template-columns: 65% 35%;
+      grid-template-rows: auto;
+    }
+
     p {
       grid-column: 1;
-      font-size: var(--text-scale-48);
+      //font-size: var(--text-scale-48);
+      font-size: clamp(2rem, 1vw + 1.8rem, 2.66rem);
       --text-weight: 700;
       text-wrap: balance;
       line-height: 1.3;
@@ -54,8 +64,14 @@
     }
 
     svg {
-      grid-column: 2;
+      grid-column: 1;
+      grid-row: 2;
       width: 100%;
+
+      @media (min-width: 64em) {
+        grid-column: 2;
+        grid-row: 1;
+      }
     }
   }
 </style>

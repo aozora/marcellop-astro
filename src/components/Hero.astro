@@ -103,7 +103,8 @@ const t4 = "MENTOR TEAM LEADER";
     font-family: var(--body-font-family);
     /*font-size: 6.5vw;*/
     font-size: 7.5vw;
-    font-weight: 700;
+    /*font-weight: 700;*/
+    font-weight: 500;
     line-height: 1.2;
     font-optical-sizing: auto;
     font-variation-settings:
@@ -165,31 +166,31 @@ const t4 = "MENTOR TEAM LEADER";
   }
 </style>
 
-<script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+<!--<script>-->
+<!--  import gsap from "gsap";-->
+<!--  import { ScrollTrigger } from "gsap/ScrollTrigger";-->
 
-  gsap.registerPlugin(ScrollTrigger);
+<!--  gsap.registerPlugin(ScrollTrigger);-->
 
-  window.addEventListener("load", () => {
-    const chars1 = Array.from(
-      document.querySelectorAll<HTMLElement>(".hero2-title1 .char span"),
-    );
-    const tl = gsap.timeline({ paused: true });
+<!--  window.addEventListener("load", () => {-->
+<!--    const chars1 = Array.from(-->
+<!--      document.querySelectorAll<HTMLElement>(".hero2-title1 .char span"),-->
+<!--    );-->
+<!--    const tl = gsap.timeline({ paused: true });-->
 
-    tl.fromTo(
-      chars1,
-      {
-        "--text-weight": 500,
-      },
-      {
-        "--text-weight": 900,
-        yoyo: true,
-        repeat: -1,
-        duration: 2,
-        stagger: 0.1,
-      },
-    );
-    tl.play();
-  });
-</script>
+<!--    tl.fromTo(-->
+<!--      chars1,-->
+<!--      {-->
+<!--        "&#45;&#45;text-weight": 500,-->
+<!--      },-->
+<!--      {-->
+<!--        "&#45;&#45;text-weight": 900,-->
+<!--        yoyo: true,-->
+<!--        repeat: -1,-->
+<!--        duration: 2,-->
+<!--        stagger: 0.1,-->
+<!--      },-->
+<!--    );-->
+<!--    tl.play();-->
+<!--  });-->
+<!--</script>-->
