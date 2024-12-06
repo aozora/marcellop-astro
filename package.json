@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/svelte": "^6.0.1",
-    "astro": "^4.16.10",
+    "@astrojs/svelte": "^7.0.1",
+    "astro": "^5.0.1",
     "astro-seo": "^0.8.4",
     "gsap": "^3.12.5"
   },
