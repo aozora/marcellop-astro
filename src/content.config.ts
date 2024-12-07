@@ -1,7 +1,9 @@
 import { z, defineCollection } from "astro:content";
+import { glob } from 'astro/loaders';
 
 const portfolioCollection = defineCollection({
-  type: "content", // v2.5.0 and later
+  // type: "content", // v2.5.0 and later
+  loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/portfolio" }),
   schema:
     //z.array(
     z.object({

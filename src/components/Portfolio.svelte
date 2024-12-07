@@ -30,7 +30,10 @@
 
   .portfolio {
     @include container;
-    min-height: 100vh;
+
+    & {
+      min-height: 100vh;
+    }
 
     //h2 {
     //  --text-weight: 700;
