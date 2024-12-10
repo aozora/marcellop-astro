@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "title": "Front-end framework",
+      "items": [
+        {
+          "title": "React",
+          "subTitle": "Next.js, Remix"
+        },
+        {
+          "title": "Svelte",
+          "subTitle": "Sveltekit"
+        },
+        {
+          "title": "Astro"
+        },
+        {
+          "title": "Vue.js"
+        }
+      ]
+    },
+    {
+      "title": "Content Management System",
+      "items": [
+        {
+          "title": "DatoCms"
+        },
+        {
+          "title": "Sanity"
+        },
+        {
+          "title": "Strapi"
+        }
+      ]
+    },
+    {
+      "title": "Languages",
+      "items": [
+        {
+          "title": "JavaScript"
+        },
+        {
+          "title": "TypeScript"
+        },
+        {
+          "title": "Node.js"
+        }
+      ]
+    },
+    {
+      "title": "Other",
+      "items": [
+        {
+          "title": "Prisma.js"
+        },
+        {
+          "title": "GSAP"
+        }
+      ]
+    }
+  ]
+}
