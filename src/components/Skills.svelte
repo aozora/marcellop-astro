@@ -1,3 +1,13 @@
+<script lang="ts">
+  import type {CollectionEntry} from "astro:content";
+
+  interface Props {
+    skills: Array<CollectionEntry<'skills'>>;
+  }
+
+  let {skills}: Props = $props();
+</script>
+
 <section class="skills">
   <h2>Skills</h2>
 
