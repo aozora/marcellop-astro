@@ -12,37 +12,13 @@
   <h2>Skills</h2>
 
   <ul>
-    <li style="--index: 0;">
-      <h3>Accessibility</h3>
+    {#each skills as skill, index}
+      <li style="--index: {index}">
+        <h3>{skill.data.title}</h3>
 
-      <p>Technical accessibility in design and software development refers to the practice of creating digital products,
-        services, and experiences that can be used by all individuals, including those with disabilities.</p>
-    </li>
-
-    <li style="--index: 1;">
-      <h3>Performance</h3>
-
-      <p>A fast, responsive interface significantly enhances the user experience. Slow-loading pages or laggy
-        interactions can frustrate users, leading to higher bounce rates and lower engagement. Performance is often the
-        first impression users get of your application.</p>
-    </li>
-
-    <li style="--index: 2;">
-      <h3>Design Systems</h3>
-
-      <p>
-        A design system is crucial in design and software engineering as it provides a centralized framework of reusable
-        components, guidelines, and standards. It ensures consistency across products, enhances collaboration between
-        designers and developers, and accelerates development by reducing redundant work.</p>
-    </li>
-
-    <li style="--index: 3;">
-      <h3>Agile development</h3>
-
-      <p>Agile development is a flexible, iterative approach to software development that emphasizes collaboration,
-        customer feedback, and rapid delivery of small, incremental improvements. It prioritizes adaptability, enabling
-        teams to respond quickly to changing requirements.</p>
-    </li>
+        <p>{skill.body}</p>
+      </li>
+    {/each}
   </ul>
 </section>
 
@@ -51,13 +27,15 @@
   @use "../styles/shared" as *;
 
   .skills {
-    //@include container;
-
     h3 {
       margin-bottom: 3rem;
       font-size: 20vw;
       color: var(--theme-foreground);
 
+      @media (max-width: 1023px) {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
       @media (min-width: 64em) {
         font-size: 6vw;
       }

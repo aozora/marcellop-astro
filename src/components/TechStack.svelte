@@ -1,58 +1,31 @@
+<script lang="ts">
+  import type {CollectionEntry} from "astro:content";
+
+  interface Props {
+    techStack: Array<CollectionEntry<'techStack'>>;
+  }
+
+  let {techStack}: Props = $props();
+</script>
+
 <section class="tech-stack">
   <h2>Tech Stack</h2>
 
   <ul>
-    <li style="--index: 0;">
-      <h3>Front-end framework</h3>
+    {#each techStack as tech, index}
+      <li style="--index: {index}">
+        <h3>{tech.data.title}</h3>
 
-      <ul>
-        <li>
-          <strong>React</strong>
-          <p>Next.js, Remix</p>
-        </li>
-        <li>
-          <strong>Svelte</strong>
-          <p>SvelteKit</p>
-        </li>
-        <li>
-          <strong>Astro</strong>
-        </li>
-        <li>
-          <strong>Vue.js</strong>
-        </li>
-      </ul>
-    </li>
-
-    <li style="--index: 1;">
-      <h3>Content Management System</h3>
-
-      <ul>
-        <li>
-          <strong>DatoCms</strong>
-        </li>
-        <li><strong>Sanity</strong></li>
-        <li><strong>Strapi</strong></li>
-      </ul>
-    </li>
-
-    <li style="--index: 2;">
-      <h3>Languages</h3>
-
-      <ul>
-        <li><strong>JavaScript</strong></li>
-        <li><strong>TypeScript</strong></li>
-        <li><strong>Node.js</strong></li>
-      </ul>
-    </li>
-
-    <li style="--index: 3;">
-      <h3>Other</h3>
-
-      <ul>
-        <li><strong>Prisma.js</strong></li>
-        <li><strong>GSAP</strong></li>
-      </ul>
-    </li>
+        <ul>
+          {#each tech.data.items as item}
+            <li>
+              <strong>{item.title}</strong>
+              {#if item.subTitle}<p>{item.subTitle}</p>{/if}
+            </li>
+          {/each}
+        </ul>
+      </li>
+    {/each}
   </ul>
 
 </section>
@@ -69,6 +42,10 @@
       font-size: 13vw;
       color: var(--theme-foreground);
 
+      @media (max-width: 1023px) {
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
       @media (min-width: 64em) {
         font-size: 10vw;
       }

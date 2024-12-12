@@ -23,13 +23,11 @@ const skillsCollection = defineCollection({
 const techStackCollection = defineCollection({
   loader: file("src/content/tech-stack/tech-stack.json"),
   schema: z.object({
-    // items: z.array(z.object({
       title: z.string(),
       items: z.array(z.object({
         title: z.string(),
         subTitle: z.string().optional(),
       })),
-    // })),
   }),
 });
 
