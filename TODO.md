@@ -1,8 +1,7 @@
 # TODO
 
 * resume: redirect to linkedin profile page
-* robots + sitemap
-* seo
+
 
 * portfolio / selected works
   * under nda

@@ -16,7 +16,7 @@
       <li style="--index: {index}">
         <h3>{skill.data.title}</h3>
 
-        <p>{skill.body}</p>
+        <p>{@html skill.body}</p>
       </li>
     {/each}
   </ul>
@@ -42,7 +42,7 @@
     }
 
     h3 + p {
-      font-size: 6vw;
+      font-size: 5.5vw;
       line-height: 1.3;
       --text-weight: 700;
       color: var(--color-highlight);
@@ -51,7 +51,6 @@
         font-size: 4vw;
       }
     }
-
 
     ul, li {
       list-style: none;
@@ -62,6 +61,7 @@
     > ul > li {
       position: sticky;
       top: calc((var(--index) - 1) * 2vh + var(--menu-height));
+      top: var(--menu-height);
       width: 100%;
       height: 90vh;
       padding: 3rem 0;

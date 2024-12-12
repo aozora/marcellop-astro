@@ -3,7 +3,7 @@
     items: [
       {url: '/', title: 'Home'},
       {url: 'https://it.linkedin.com/in/marcellopalmitessa', title: 'Resume', external: true},
-      {url: '/uses', title: 'Uses'},
+      // {url: '/uses', title: 'Uses'},
       {url: '/tati', title: 'Tati'},
     ]
   }
